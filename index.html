@@ -1,71 +1,4 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaMask Wallet Integration</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-</head>
-<body>
-    <h1>MetaMask Wallet Integration</h1>
-    <button id="connectWalletBtn">Connect MetaMask Wallet</button>
-    <div id="walletInfo"></div>
-    <div id="ethereumBalance"></div>
-    <button class="balance-btn " id="usdBtn">Show USD Balance</button>
-    <button class="balance-btn " id="btcBtn">Show BTC Balance</button>
-    <button class="balance-btn " id="dogeBtn">Show DOGE Balance</button>
-    <button class="balance-btn " id="solBtn">Show SOL Balance</button>
-
-    <script>
-        async function connectToMetaMask() {
-            // Check if MetaMask is installed
-            if (window.ethereum) {
-                // Initialize Web3.js
-                window.web3 = new Web3(window.ethereum);
-                
-                try {
-                    // Request access to the user's MetaMask accounts
-                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                    
-                    // Display connected wallet address
-                    document.getElementById('walletInfo').innerText = `Connected Wallet: ${accounts[0]}`;
-                    
-                    // Display popup message
-                    alert('MetaMask wallet connected successfully!');
-                } catch (error) {
-                    console.error(error);
-                    alert('Failed to connect MetaMask wallet.');
-                }
-            } else {
-                alert('MetaMask extension not detected. Please install MetaMask to use this feature.');
-            }
-        }
-
-        // Add event listener to connect wallet button
-        document.getElementById('connectWalletBtn').addEventListener('click', connectToMetaMask);
-
-        // Function to display balances
-        function displayBalance(balance) {
-            // Hide all balances first
-            document.getElementById('usdBalance').style.display = 'none';
-            document.getElementById('btcBalance').style.display = 'none';
-            document.getElementById('dogeBalance').style.display = 'none';
-            document.getElementById('solBalance').style.display = 'none';
-            // Display the selected balance
-            balance.style.display = 'block';
-        }
-
-        // Add event listeners to balance buttons
-        document.getElementById('usdBtn').addEventListener('click', () => displayBalance(document.getElementById('usdBalance')));
-        document.getElementById('btcBtn').addEventListener('click', () => displayBalance(document.getElementById('btcBalance')));
-        document.getElementById('dogeBtn').addEventListener('click', () => displayBalance(document.getElementById('dogeBalance')));
-        document.getElementById('solBtn').addEventListener('click', () => displayBalance(document.getElementById('solBalance')));
-    </script>
-</body>
-</html>
-<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -80,11 +13,11 @@
     <h1>MetaMask Wallet Integration</h1>
     <button id="connectWalletBtn">Connect MetaMask Wallet</button>
     <div id="walletInfo"></div>
-    <div id="ethereumBalance"></div>
-    <div id="usdBalance"></div>
-    <div id="dogeBalance"></div>
-    <div id="btcBalance"></div>
-    <div id="solBalance"></div>
+    <div class="color" id="ethereumBalance"></div>
+    <div class="color" id="usdBalance"></div>
+    <div class="color" id="dogeBalance"></div>
+    <div class="color" id="btcBalance"></div>
+    <div class="color" id="solBalance"></div>
 
     <script>
         async function connectToMetaMask() {
@@ -156,6 +89,6 @@
         document.getElementById('connectWalletBtn').addEventListener('click', connectToMetaMask);
     </script>
 </body>
-</html> -->
+</html> 
 
 
