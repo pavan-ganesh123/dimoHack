@@ -15,6 +15,9 @@
     <div id="walletInfo"></div>
     <div id="ethereumBalance"></div>
     <div id="usdBalance"></div>
+    <div id="dogeBalance"></div>
+    <div id="btcBalance"></div>
+    <div id="solBalance"></div>
 
     <script>
         async function connectToMetaMask() {
@@ -43,6 +46,33 @@
                     // Convert Ethereum balance to USD
                     const usdBalance = parseFloat(ethereumBalance) * ethToUsdRate;
                     document.getElementById('usdBalance').innerText = `USD Balance: $${usdBalance.toFixed(2)}`;
+                    
+                    // Fetch current ETH to DOGE conversion rate (using CoinGecko API)
+                    const dogeResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=doge');
+                    const dogeData = await dogeResponse.json();
+                    const ethToDogeRate = dogeData.ethereum.doge;
+                    
+                    // Convert Ethereum balance to DOGE
+                    const dogeBalance = parseFloat(ethereumBalance) * ethToDogeRate;
+                    document.getElementById('dogeBalance').innerText = `DOGE Balance: ${dogeBalance.toFixed(8)}`;
+                    
+                    // Fetch current ETH to BTC conversion rate (using CoinGecko API)
+                    const btcResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=btc');
+                    const btcData = await btcResponse.json();
+                    const ethToBtcRate = btcData.ethereum.btc;
+                    
+                    // Convert Ethereum balance to BTC
+                    const btcBalance = parseFloat(ethereumBalance) * ethToBtcRate;
+                    document.getElementById('btcBalance').innerText = `BTC Balance: ${btcBalance.toFixed(8)}`;
+                    
+                    // Fetch current ETH to SOL conversion rate (using CoinGecko API)
+                    const solResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=sol');
+                    const solData = await solResponse.json();
+                    const ethToSolRate = solData.ethereum.sol;
+                    
+                    // Convert Ethereum balance to SOL
+                    const solBalance = parseFloat(ethereumBalance) * ethToSolRate;
+                    document.getElementById('solBalance').innerText = `SOL Balance: ${solBalance.toFixed(8)}`;
                     
                     // Display popup message
                     alert('MetaMask wallet connected successfully!');
