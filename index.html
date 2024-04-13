@@ -48,9 +48,9 @@
                     document.getElementById('usdBalance').innerText = `USD Balance: $${usdBalance.toFixed(2)}`;
                     
                     // Fetch current ETH to DOGE conversion rate (using CoinGecko API)
-                    const dogeResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=dogecoin');
+                    const dogeResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=eth');
                     const dogeData = await dogeResponse.json();
-                    const ethToDogeRate = dogeData.ethereum.dogecoin;
+                    const ethToDogeRate = dogeData.dogecoin.eth;
                     
                     // Convert Ethereum balance to DOGE
                     const dogeBalance = parseFloat(ethereumBalance) * ethToDogeRate;
@@ -65,13 +65,13 @@
                     const btcBalance = parseFloat(ethereumBalance) * ethToBtcRate;
                     document.getElementById('btcBalance').innerText = `BTC Balance: ${btcBalance.toFixed(8)}`;
                     
-                    // Fetch current ETH to SOL conversion rate (using CoinGecko API)
-                    const solResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=solana');
+                    // Fetch current SOL to USD conversion rate (using CoinGecko API)
+                    const solResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
                     const solData = await solResponse.json();
-                    const ethToSolRate = solData.ethereum.solana;
+                    const solToUsdRate = solData.solana.usd;
                     
                     // Convert Ethereum balance to SOL
-                    const solBalance = parseFloat(ethereumBalance) * ethToSolRate;
+                    const solBalance = usdBalance / solToUsdRate;
                     document.getElementById('solBalance').innerText = `SOL Balance: ${solBalance.toFixed(8)}`;
                     
                     // Display popup message
