@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Wallet Integration</title>
+    <link src="app.js">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    
+</head>
+
+<body>
+    <h1>MetaMask Wallet Integration</h1>
+    <button id="connectWalletBtn">Connect MetaMask Wallet</button>
+    <div id="walletInfo"></div>
+    <div id="conversionRate"></div>
+
+    
+    <script>
+        document.getElementById('connectWalletBtn').addEventListener('click', () => {
+            // Check if MetaMask is installed and enabled
+            if (window.ethereum) {
+                // MetaMask is installed and enabled
+                // Check if the user has granted access to their accounts
+                ethereum.request({ method: 'eth_accounts' })
+                .then(accounts => {
+                    if (accounts.length > 0) {
+                        // MetaMask is connected, and the user has approved access to their accounts
+                        console.log('MetaMask is connected');
+                        console.log('Connected account:', accounts[0]);
+                        alert('MetaMask is connected. Connected account: ' + accounts[0]);
+                    } else {
+                        // MetaMask is installed but not connected
+                        console.log('MetaMask is installed, but not connected');
+                        alert('MetaMask is installed, but not connected');
+                    }
+                })
+                .catch(error => {
+                    // Error occurred while checking account access
+                    console.error('Error checking account access:', error);
+                    alert('Error checking account access. Please try again.');
+                });
+            } else {
+                // MetaMask is not installed or not enabled
+                console.log('MetaMask extension not detected');
+                alert('MetaMask extension not detected. Please install MetaMask to use this feature.');
+            }
+        });
+    </script>
+</body>
+</html>
