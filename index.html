@@ -17,35 +17,38 @@
 
     
     <script>
-        document.getElementById('connectWalletBtn').addEventListener('click', () => {
-            // Check if MetaMask is installed and enabled
+        async function connectToMetaMask() {
+            // Check if MetaMask is installed
             if (window.ethereum) {
-                // MetaMask is installed and enabled
-                // Check if the user has granted access to their accounts
-                ethereum.request({ method: 'eth_accounts' })
-                .then(accounts => {
-                    if (accounts.length > 0) {
-                        // MetaMask is connected, and the user has approved access to their accounts
-                        console.log('MetaMask is connected');
-                        console.log('Connected account:', accounts[0]);
-                        alert('MetaMask is connected. Connected account: ' + accounts[0]);
-                    } else {
-                        // MetaMask is installed but not connected
-                        console.log('MetaMask is installed, but not connected');
-                        alert('MetaMask is installed, but not connected');
-                    }
-                })
-                .catch(error => {
-                    // Error occurred while checking account access
-                    console.error('Error checking account access:', error);
-                    alert('Error checking account access. Please try again.');
-                });
+                // Initialize Web3.js
+                window.web3 = new Web3(window.ethereum);
+                
+                try {
+                    // Request access to the user's MetaMask accounts
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    
+                    // Display connected wallet address
+                    document.getElementById('walletInfo').innerText = `Connected Wallet: ${accounts[0]}`;
+                    
+                    // Fetch current ETH to USD conversion rate (example using CoinGecko API)
+                    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+                    const data = await response.json();
+                    const ethToUsdRate = data.ethereum.usd;
+                    document.getElementById('conversionRate').innerText = `ETH to USD Rate: ${ethToUsdRate}`;
+                    
+                    // Display popup message
+                    alert('MetaMask wallet connected successfully!');
+                } catch (error) {
+                    console.error(error);
+                    alert('Failed to connect MetaMask wallet or fetch conversion rate.');
+                }
             } else {
-                // MetaMask is not installed or not enabled
-                console.log('MetaMask extension not detected');
                 alert('MetaMask extension not detected. Please install MetaMask to use this feature.');
             }
-        });
+        }
+
+        // Add event listener to connect wallet button
+        document.getElementById('connectWalletBtn').addEventListener('click', connectToMetaMask);
     </script>
 </body>
 </html>
