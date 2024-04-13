@@ -1,0 +1,60 @@
+/* Styles for the MetaMask Wallet Integration */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#connectWalletBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#walletInfo {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#ethereumBalance,
+#usdBalance,
+#dogeBalance,
+#btcBalance,
+#solBalance {
+    margin-bottom: 10px;
+}
+
+/* Styling for the wallet balances */
+.balance {
+    font-size: 18px;
+}
+
+/* Styling for the balances */
+.balance-label {
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+}
