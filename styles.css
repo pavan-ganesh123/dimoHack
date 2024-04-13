@@ -32,24 +32,21 @@ h1 {
 #walletInfo {
     margin-bottom: 10px;
     font-weight: bold;
+    color: #333;
 }
 
-#ethereumBalance,
-#usdBalance,
-#dogeBalance,
-#btcBalance,
-#solBalance {
-    margin-bottom: 10px;
-}
-
-/* Styling for the wallet balances */
 .balance {
     font-size: 18px;
 }
 
-/* Styling for the balances */
 .balance-label {
     font-weight: bold;
+    color: #333;
+}
+
+/* Styling for individual balance items */
+.balance-item {
+    margin-bottom: 10px;
 }
 
 /* Responsive styles */
