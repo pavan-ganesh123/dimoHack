@@ -48,9 +48,9 @@
                     document.getElementById('usdBalance').innerText = `USD Balance: $${usdBalance.toFixed(2)}`;
                     
                     // Fetch current ETH to DOGE conversion rate (using CoinGecko API)
-                    const dogeResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=doge');
+                    const dogeResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=dogecoin');
                     const dogeData = await dogeResponse.json();
-                    const ethToDogeRate = dogeData.ethereum.doge;
+                    const ethToDogeRate = dogeData.ethereum.dogecoin;
                     
                     // Convert Ethereum balance to DOGE
                     const dogeBalance = parseFloat(ethereumBalance) * ethToDogeRate;
@@ -66,9 +66,9 @@
                     document.getElementById('btcBalance').innerText = `BTC Balance: ${btcBalance.toFixed(8)}`;
                     
                     // Fetch current ETH to SOL conversion rate (using CoinGecko API)
-                    const solResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=sol');
+                    const solResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=solana');
                     const solData = await solResponse.json();
-                    const ethToSolRate = solData.ethereum.sol;
+                    const ethToSolRate = solData.ethereum.solana;
                     
                     // Convert Ethereum balance to SOL
                     const solBalance = parseFloat(ethereumBalance) * ethToSolRate;
