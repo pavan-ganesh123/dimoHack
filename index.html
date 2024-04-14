@@ -25,9 +25,6 @@
                 alert('Failed to disconnect MetaMask wallet.');
             }
         }
-    
-        // Add event listener to disconnect wallet button
-        document.getElementById('disconnectWalletBtn').addEventListener('click', disconnectMetaMask);
     </script>    
 </head>
 <body>
@@ -138,6 +135,9 @@
 
         // Add event listener to connect wallet button
         document.getElementById('connectWalletBtn').addEventListener('click', connectToMetaMask);
+
+        // Add event listener to disconnect wallet button
+        document.getElementById('disconnectWalletBtn').addEventListener('click', disconnectMetaMask);
     </script>
 </body>
 </html>
