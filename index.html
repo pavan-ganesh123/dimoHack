@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script>
+        // Add the disconnectMetaMask function here
         async function disconnectMetaMask() {
             try {
+                // Check if MetaMask is installed
                 if (window.ethereum) {
-                    await ethereum.request({ method: 'eth_accounts' });
+                    // Request to disconnect the MetaMask wallet
+                    await ethereum.request({ method: 'eth_requestAccounts', params: [{ eth_accounts: [] }] });
                     document.getElementById('walletInfo').innerText = 'Wallet Disconnected';
                     // Additional cleanup or actions if needed
                     alert('MetaMask wallet disconnected successfully!');
@@ -22,10 +25,10 @@
                 alert('Failed to disconnect MetaMask wallet.');
             }
         }
-
+    
         // Add event listener to disconnect wallet button
         document.getElementById('disconnectWalletBtn').addEventListener('click', disconnectMetaMask);
-    </script>
+    </script>    
 </head>
 <body>
     <header>
