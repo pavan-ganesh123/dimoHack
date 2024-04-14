@@ -1,52 +1,60 @@
 /* General Styles */
-body {
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f0f0f0;
+  }
+  
+  body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-}
-
-.container {
+  }
+  
+  .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Styles */
-header {
-    background-color: #007bff;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: var(--primary-color);
     padding: 20px;
     border-radius: 0 0 10px 10px;
     color: #fff;
-}
-
-.header-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header h1 {
+  }
+  
+  header h1 {
     margin: 0;
     font-size: 24px;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-nav li {
-    display: inline;
+    display: flex;
+  }
+  
+  nav li {
     margin-right: 10px;
-}
-
-nav button {
+  }
+  
+  nav button {
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;
@@ -54,46 +62,59 @@ nav button {
     padding: 8px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-nav button:hover {
+  }
+  
+  nav button:hover {
     background-color: #fff;
-    color: #007bff;
-}
-
-/* Balance Item Styles */
-.balance-item {
-    display: flex;
+    color: var(--primary-color);
+  }
+  
+  /* Balance Item Styles */
+  .balance-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.currency-logo {
+  }
+  
+  .currency-logo {
     width: 40px;
     height: 40px;
     margin-right: 15px;
-}
-
-.balance {
+  }
+  
+  .balance {
     font-size: 20px;
     padding: 10px;
     border-radius: 8px;
-    background-color: #f0f0f0;
+    background-color: var(--secondary-color);
     transition: all 0.3s ease;
-}
-
-.balance:hover {
+  }
+  
+  .balance:hover {
     background-color: #e0e0e0;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer Styles */
-footer {
+  }
+  
+  /* Footer Styles */
+  footer {
     text-align: center;
     padding: 20px;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: #fff;
     border-radius: 10px;
     margin-top: 20px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url('logo.png');
+    background-size: cover;
+    margin-right: 10px;
+  }
