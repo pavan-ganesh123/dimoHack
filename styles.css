@@ -1,7 +1,10 @@
-/* General Styles */
-:root {
+
+  /* General Styles */
+  :root {
     --primary-color: #007bff;
     --secondary-color: #f0f0f0;
+    --connect-color: #28a745;
+    --disconnect-color: #dc3545;
   }
   
   body {
@@ -95,6 +98,35 @@
     background-color: #e0e0e0;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Connect and Disconnect Button Styles */
+  .connect-button {
+    background-color: var(--connect-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .connect-button:hover {
+    background-color: #1e7e34;
+  }
+  
+  .disconnect-button {
+    background-color: var(--disconnect-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .disconnect-button:hover {
+    background-color: #b22234;
   }
   
   /* Footer Styles */
