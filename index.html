@@ -72,23 +72,24 @@
         // Add the disconnectMetaMask function here
         async function disconnectMetaMask() {
             try {
-                // Check if MetaMask is installed
                 if (window.ethereum) {
-                    // Request to disconnect the MetaMask wallet
-                    await ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: [] }] });
+                    // Check MetaMask connection status
+                    if (!ethereum.isConnected()) {
+                        throw new Error('MetaMask is not connected.');
+                    }
             
-                     // Update UI to indicate disconnection and reset balances
+                    // Request permission to disconnect the MetaMask wallet
+                    const permissions = await ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: [] }] });
+                    if (!permissions) {
+                        throw new Error('Permission to disconnect wallet was denied.');
+                    }
+
+                    // Update UI to indicate disconnection
                     document.getElementById('walletInfo').innerText = 'Wallet Disconnected';
-                    document.getElementById('ethereumBalanceValue').innerText = '0';
-                    document.getElementById('usdBalanceValue').innerText = '0';
-                    document.getElementById('dogeBalanceValue').innerText = '0';
-                    document.getElementById('btcBalanceValue').innerText = '0';
-                    document.getElementById('solBalanceValue').innerText = '0';
-            
-                 // Additional cleanup or actions if needed
-                alert('MetaMask wallet disconnected successfully!');
-                } 
-                else {
+                    // Reset balance display
+                    resetBalances();
+                    alert('MetaMask wallet disconnected successfully!');
+                } else {
                     alert('MetaMask extension not detected.');
                 }
             } catch (error) {
@@ -96,6 +97,7 @@
                 alert('Failed to disconnect MetaMask wallet.');
             }
         }
+
 
         async function fetchAndDisplayBalances(account) {
             const web3 = new Web3(ethereum);
