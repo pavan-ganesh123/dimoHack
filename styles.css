@@ -1,109 +1,99 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
-
-header {
-  background-color: #007bff;
-  padding: 10px;
-  border-radius: 5px 5px 0 0;
-}
-
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-header nav li {
-  margin-right: 10px;
-}
-
-header nav button {
-  background-color: #fff;
-  color: #007bff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-header nav button:hover {
-  background-color: #e9ecef;
-}
-
-header nav button#disconnectWalletBtn {
-  background-color: #fff;
-  color: #dc3545; /* Red color for disconnect */
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-header nav button#disconnectWalletBtn:hover {
-  background-color: #f8d7da; /* Light red on hover */
-}
-
 
 .container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: #007bff solid;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styles */
+header {
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* Balance Item Styles */
 .balance-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .currency-logo {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
 }
 
 .balance {
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #e9ecef;
-  transition: font-size 0.3s ease;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
 }
 
 .balance:hover {
-  font-size: 24px;
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.balance-label {
-  font-weight: bold;
-  color: #333;
-}
-
-/* Styling for individual balance items */
-.balance-item {
-margin-bottom: 10px;
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-.container {
-    padding: 0 10px;
-}
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
 }
