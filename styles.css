@@ -6,86 +6,6 @@ body {
   background-color: #f5f5f5;
 }
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  color: #333;
-}
-
-#connectWalletBtn {
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-#connectWalletBtn:hover {
-  background-color: #0056b3;
-}
-
-#walletInfo {
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: bolder;
-  color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #e9ecef;
-}
-
-.balance {
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #e9ecef;
-}
-
-.balance-label {
-  font-weight: bold;
-  color: #333;
-}
-
-/* Styling for individual balance items */
-/*.balance-item {
-  margin-bottom: 10px;
-}
-
-/* Make text bigger on hover */
-/*.balance:hover {
-  font-size: 24px;
-}
-
-/* Responsive styles */
-/*@media (max-width: 600px) {
-  .container {
-      padding: 0 10px;
-  }
-}*/
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-}
-
 header {
   background-color: #007bff;
   padding: 10px;
@@ -147,6 +67,100 @@ header nav button:hover {
 .balance-label {
   font-weight: bold;
   color: #333;
+}
+
+/* Styling for individual balance items */
+/*.balance-item {
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+/*@media (max-width: 600px) {
+  .container {
+      padding: 0 10px;
+  }
+}*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 10px;
+}
+
+header nav button {
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header nav button:hover {
+    background-color: #e9ecef;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.balance-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.currency-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.balance {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    transition: font-size 0.3s ease;
+}
+
+.balance:hover {
+    font-size: 24px;
+}
+
+.balance-label {
+    font-weight: bold;
+    color: #333;
 }
 
 /* Styling for individual balance items */
