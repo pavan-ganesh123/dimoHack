@@ -1,109 +1,109 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
 header {
-    background-color: #007bff;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
 }
 
 header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 header nav li {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 header nav button {
-    background-color: #fff;
-    color: #007bff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 header nav button:hover {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
 
 header nav button#disconnectWalletBtn {
-    background-color: #fff;
-    color: #dc3545; /* Red color for disconnect */
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #fff;
+  color: #dc3545; /* Red color for disconnect */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 header nav button#disconnectWalletBtn:hover {
-    background-color: #f8d7da; /* Light red on hover */
+  background-color: #f8d7da; /* Light red on hover */
 }
 
 
 .container {
-    max-width: 800px;
-    border: #007bff solid;
-    margin: 20px auto;
-    padding: 0 20px;
-    background-color: #fff;
-    border-radius: 5px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #007bff solid;
 }
 
 .balance-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .currency-logo {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
 }
 
 .balance {
-    font-size: 18px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #e9ecef;
-    transition: font-size 0.3s ease;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e9ecef;
+  transition: font-size 0.3s ease;
 }
 
 .balance:hover {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .balance-label {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
 }
 
 /* Styling for individual balance items */
 .balance-item {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
-  .container {
-      padding: 0 10px;
-  }
+.container {
+    padding: 0 10px;
+}
 }
