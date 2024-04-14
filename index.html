@@ -12,18 +12,21 @@
             // Check if MetaMask is installed
             if (window.ethereum) {
                 // Request to disconnect the MetaMask wallet
-                await ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: [] }] });
-                
-                // Update UI to indicate disconnection and reset balances
-                document.getElementById('walletInfo').innerText = 'Wallet Disconnected';
-                document.getElementById('ethereumBalanceValue').innerText = '0';
-                document.getElementById('usdBalanceValue').innerText = '0';
-                document.getElementById('dogeBalanceValue').innerText = '0';
-                document.getElementById('btcBalanceValue').innerText = '0';
-                document.getElementById('solBalanceValue').innerText = '0';
-                
-                // Additional cleanup or actions if needed
-                alert('MetaMask wallet disconnected successfully!');
+                await ethereum.request({
+                method: 'wallet_requestPermissions',
+                params: [{ eth_accounts: [] }],
+            });
+
+            // Update UI to indicate disconnection and reset balances
+            document.getElementById('walletInfo').innerText = 'Wallet Disconnected';
+            document.getElementById('ethereumBalanceValue').innerText = '0';
+            document.getElementById('usdBalanceValue').innerText = '0';
+            document.getElementById('dogeBalanceValue').innerText = '0';
+            document.getElementById('btcBalanceValue').innerText = '0';
+            document.getElementById('solBalanceValue').innerText = '0';
+
+            // Additional cleanup or actions if needed
+            alert('MetaMask wallet disconnected successfully!');
             } else {
                 alert('MetaMask extension not detected.');
             }
@@ -32,8 +35,7 @@
             alert('Failed to disconnect MetaMask wallet.');
         }
     }
-    </script>
-    
+    </script>    
 </head>
 <body>
     <header>
