@@ -59,6 +59,7 @@ header nav button#disconnectWalletBtn:hover {
 
 .container {
     max-width: 800px;
+    border: #007bff solid;
     margin: 20px auto;
     padding: 0 20px;
     background-color: #fff;
