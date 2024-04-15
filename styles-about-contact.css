@@ -111,3 +111,17 @@ body {
     border-radius: 5px;
     padding: 10px
   }
+  
+  .back-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0069d9;
+}

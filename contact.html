@@ -7,13 +7,9 @@
     <link rel="stylesheet" href="styles-about-contact.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><button id="backBtn">Back</button></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="back-nav">
+        <button id="backbtn" class="back-button">Back</button>
+    </nav>
     <main>
         <div class="container">
             <h1>Contact Us</h1>
@@ -26,7 +22,7 @@
     </footer>
     <script>
         // Add event listener to back button
-        document.getElementById('backBtn').addEventListener('click', () => {
+        document.getElementById('backbtn').addEventListener('click', () => {
             window.history.back();
         });
     </script>
